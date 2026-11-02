@@ -1,0 +1,14 @@
+{
+  "rows_read": 7,
+  "valid_rows": 6,
+  "unique_transactions": 5,
+  "duplicates_removed": 1,
+  "invalid_rows": 1,
+  "expenses_by_category": {
+    "Підписки": 415.0,
+    "Продукти": 350.5,
+    "Транспорт": 120.0
+  },
+  "income_total": 30000.0,
+  "expenses_total": 885.5
+}
