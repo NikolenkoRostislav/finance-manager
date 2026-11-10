@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def generate_analytics(data, month):
     spending_by_category = data.groupby('category')['amount_uah'].sum().reset_index(name='total_expenses')
 
@@ -12,6 +15,14 @@ def generate_analytics(data, month):
     ).reset_index()
     
     if month:
-        print(spending_by_month_category[spending_by_month_category['date'] == month])
+        monthly_report = (
+            spending_by_month_category[spending_by_month_category['date'] == pd.Period(month, freq='M')]
+            .drop(columns='date')
+            .T
+            .reset_index()
+        )
+        monthly_report.columns = ['category', 'total_expenses']
+
+        print(monthly_report.to_string(index=False))
 
     return spending_by_category, spending_by_month, spending_by_month_category
