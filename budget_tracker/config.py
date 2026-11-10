@@ -26,3 +26,4 @@ class Config:
             self.categories_rules = json.load(f)
             self.categories_rules = self.categories_rules.get("rules", [])
 
+__all__ = ["Config"]

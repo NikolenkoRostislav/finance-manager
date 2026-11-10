@@ -21,3 +21,5 @@ class PrivatbankLoader(BaseLoader):
         df_standardized['source'] = 'Privatbank'
 
         return df_standardized
+
+__all__ = ['PrivatbankLoader']

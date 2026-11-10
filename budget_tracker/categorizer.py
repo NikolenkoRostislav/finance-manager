@@ -14,3 +14,5 @@ def get_category(row, rules):
             return category
 
     return 'Інше'
+
+__all__ = ['categorize']

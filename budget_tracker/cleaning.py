@@ -15,3 +15,5 @@ def clean(data):
     data_deduplicated.reset_index(drop=True, inplace=True)
 
     return data_deduplicated, pd.concat([invalid_columns, duplicated_columns], ignore_index=True)
+
+__all__ = ["clean"]

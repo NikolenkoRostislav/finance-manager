@@ -21,3 +21,5 @@ class CashLoader(BaseLoader):
         df_standardized['category'] = df['category'].apply(lambda x: x if x in self.config.categories_rules else 'Інше')
 
         return df_standardized
+
+__all__ = ['CashLoader']

@@ -27,3 +27,5 @@ def choose_loader(config, file_path):
 def load_data_from_file(config, file_path) -> pd.DataFrame:
     loader = choose_loader(config, file_path)
     return loader.load(file_path)
+
+__all__ = ["load_data"]

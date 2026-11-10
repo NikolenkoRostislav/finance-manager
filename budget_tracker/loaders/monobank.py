@@ -16,3 +16,5 @@ class MonobankLoader(BaseLoader):
         df_standardized['source'] = 'Monobank'
 
         return df_standardized
+
+__all__ = ["MonobankLoader"]

@@ -20,3 +20,5 @@ def generate_reports(analytics_results, rejected_rows):
         monthly_report = row.drop('date').rename_axis('category').reset_index(name='total_expenses')
 
         monthly_report.to_csv(output_dir / 'spending_by_category.csv', index=False)
+
+__all__ = ['generate_reports']

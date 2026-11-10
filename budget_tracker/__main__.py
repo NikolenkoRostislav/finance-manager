@@ -1,12 +1,12 @@
 import argparse
 import logging
 
-from .analytics import generate_analytics
-from .categorizer import categorize
-from .cleaning import clean
-from .config import Config
+from .analytics import *
+from .categorizer import *
+from .cleaning import *
+from .config import *
 from .loaders import *
-from .reports import generate_reports
+from .reports import *
 
 
 def main():

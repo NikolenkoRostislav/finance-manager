@@ -26,3 +26,5 @@ def generate_analytics(data, month):
         print(monthly_report.to_string(index=False))
 
     return spending_by_category, spending_by_month, spending_by_month_category
+
+__all__ = ['generate_analytics']
