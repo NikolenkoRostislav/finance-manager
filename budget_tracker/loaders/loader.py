@@ -12,7 +12,7 @@ def load_data(config) -> pd.DataFrame:
     for i in bank_exports.iterdir():
         if i.is_file():
             dataframes.append(load_data_from_file(config, i))
-    return pd.concat(dataframes)
+    return pd.concat(dataframes, ignore_index=True)
 
 def choose_loader(config, file_path):
     if "monobank_" in file_path.name:
@@ -22,7 +22,7 @@ def choose_loader(config, file_path):
     elif "cash_" in file_path.name:
         return CashLoader(config)
     else:
-        raise ValueError(f"Unsupported file format: {file_path}")
+        raise ValueError(f"Unsupported file format: {file_path.name}")
 
 def load_data_from_file(config, file_path) -> pd.DataFrame:
     loader = choose_loader(config, file_path)

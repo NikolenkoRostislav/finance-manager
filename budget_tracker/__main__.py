@@ -26,7 +26,7 @@ def main():
 
         data = load_data(config)
 
-        data, rejected_rows = clean(data, config)
+        data, rejected_rows = clean(data)
 
         data = categorize(data, config)
 
