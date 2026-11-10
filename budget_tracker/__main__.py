@@ -32,7 +32,7 @@ def main():
 
         analytics_results = generate_analytics(data, month)
 
-        generate_reports(analytics_results, rejected_rows, month)
+        generate_reports(analytics_results, rejected_rows)
 
     except Exception as e:
         logger.error("An error occurred: %s", e)
