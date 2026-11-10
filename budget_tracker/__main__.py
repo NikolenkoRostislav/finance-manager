@@ -24,9 +24,9 @@ def main():
 
         config = Config(data_path)
 
-        dataframes = load_data(config)
+        data = load_data(config)
 
-        data, rejected_rows = clean(dataframes, config)
+        data, rejected_rows = clean(data, config)
 
         data = categorize(data, config)
 

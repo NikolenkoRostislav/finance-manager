@@ -1,2 +1,2 @@
-def clean(dataframes, config):
+def clean(data, config):
     return
