@@ -12,7 +12,7 @@ def clean(data):
     data_deduplicated = data_valid.drop_duplicates(subset=["date", "amount_uah", "description"])
     duplicated_columns = data_valid[~data_valid.index.isin(data_deduplicated.index)]
     duplicated_columns["rejection_reason"] = "Duplicate entry"
-    data_deduplicated.reset_index(drop=True, inplace=True)
+    data_deduplicated.reset_index(drop=True)
 
     return data_deduplicated, pd.concat([invalid_columns, duplicated_columns], ignore_index=True)
 

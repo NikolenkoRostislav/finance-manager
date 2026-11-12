@@ -2,9 +2,9 @@ import pandas as pd
 
 
 def generate_analytics(data, month):
-    spending_by_category = data.groupby('category')['amount_uah'].sum().reset_index(name='total_expenses')
+    spending_by_category = data.groupby('category')['amount_uah'].sum().round(2).reset_index(name='total_expenses')
 
-    spending_by_month = data.groupby(data['date'].dt.to_period('M'))['amount_uah'].sum().reset_index(name='total_expenses')
+    spending_by_month = data.groupby(data['date'].dt.to_period('M'))['amount_uah'].sum().round(2).reset_index(name='total_expenses')
 
     spending_by_month_category = data.pivot_table(
         values='amount_uah',
@@ -12,7 +12,7 @@ def generate_analytics(data, month):
         columns='category',
         aggfunc='sum',
         fill_value=0
-    ).reset_index()
+    ).round(2).reset_index()
     
     if month:
         monthly_report = (
